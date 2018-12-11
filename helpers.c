@@ -26,9 +26,12 @@ int frequency(string note)
     {
         oct = atoi(&note[2]);
         char accident = note[1];
-        if (accident=='#'){
+        if (accident == '#')
+        {
             n += 1;
-        }else if (accident == 'b'){
+        }
+        else if (accident == 'b')
+        {
             n -= 1;
         }
     }
@@ -38,39 +41,40 @@ int frequency(string note)
     }
     char letter = note[0];
 
-    if (letter=='A'){
+    if (letter == 'A')
+    {
         n += 0;
     }
-    else if (letter=='B')
+    else if (letter == 'B')
     {
         n += 2;
     }
-    else if (letter=='C')
+    else if (letter == 'C')
     {
         n -= 9;
     }
-    else if (letter=='D')
+    else if (letter == 'D')
     {
         n -= 7;
     }
-    else if (letter=='E')
+    else if (letter == 'E')
     {
         n -= 5;
     }
-    else if (letter=='F')
+    else if (letter == 'F')
     {
         n -= 4;
     }
-    else if (letter=='G')
+    else if (letter == 'G')
     {
         n -= 2;
     }
-    n += (oct-4) * 12;
+    n += (oct - 4) * 12;
 
-    float power = n/12.;
-    float f = round(pow(2, power)*440);
+    float power = n / 12.;
+    float f = round(pow(2, power) * 440);
     return f;
-    }
+}
 
 // Determines whether a string represents a rest
 bool is_rest(string s)
